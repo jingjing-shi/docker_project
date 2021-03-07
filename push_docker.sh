@@ -5,7 +5,7 @@
 #docker build --tag=app .
 
 
-dockerpath="jingjingshi09/docker_app"
+dockerpath="jingjingshi09/temp_conversion"
 
 # Authenticate & Tag
 echo "Docker ID and Image: $dockerpath"
