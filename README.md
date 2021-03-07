@@ -1,8 +1,8 @@
 # Temperature_conversion 
 
-## This is a repo for Cloud-computing course Project 2
+This is a repo for Cloud-computing course Project 2
 
-## This simple docker container is a calculator to perform temperature conversion from celsius to fahrenheit or from fahrenheit to celsius.
+This simple docker container is a calculator to perform temperature conversion from celsius to fahrenheit or from fahrenheit to celsius.
 
 
 ## Run in container
