@@ -1,36 +1,35 @@
-# docker_project
+# Temperature_conversion 
 
-## Create a local python virtual environment and source it 
+## This is a repo for Cloud-computing course Project 2
 
-```
-python3 -m venv ~/.dockerproj
-source ~/.dockerproj/bin/activate
-```
+## This simple docker container is a calculator to perform temperature conversion from celsius to fahrenheit or from fahrenheit to celsius.
 
-## Install hadolint and other packages
-(you may want to become root ```sudo wu -``` and then exit by typing ```exit```
-
-```
-wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.17.5/hadolint-Linux-x86_64 &&\
-                chmod +x /bin/hadolint
-pip install -r requirements.txt
-```
 
 ## Run in container
 
 ```
 docker build --tag=app .
-docker run -it app bash
-```
-
-## Test app in shell
-
-```
-python app.py
+## convert fahrenheit to celsius
+docker run -it app python app.py --type 'F' --temp 98
+## convert celsius to fahrenheit
+docker run -it app python app.py --type 'C' --temp 36.66
+## a wrong type of temperature
+docker run -it app python app.py --type 'X' --temp 98
 ```
 
 ## Tags and Uploads an image to Docker Hub
 
 ```
-chmod +x push-docker.sh && ./push-docker.sh
+chmod +x push_docker.sh && ./push_docker.sh
+```
+## Pull the image from Dockerhub
+
+```
+docker pull jingjingshi09/temp_conversion:latest
+## convert fahrenheit to celsius
+docker run -it jingjingshi09/temp_conversion python app.py --type 'F' --temp 98
+## convert celsius to fahrenheit
+docker run -it jingjingshi09/temp_conversion python app.py --type 'C' --temp 36.66
+## a wrong type of temperature
+docker run -it jingjingshi09/temp_conversion python app.py --type 'X' --temp 98
 ```
